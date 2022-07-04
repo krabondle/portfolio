@@ -7,4 +7,4 @@ CSM demo
 https://youtu.be/Spj1i6DlBkw
 
 Information panel
-![image]https://github.com/krabondle/portfolio/blob/master/Information_panel/demo.JPG
+![image](https://github.com/krabondle/portfolio/blob/master/Information_panel/demo.JPG)
