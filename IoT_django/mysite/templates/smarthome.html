@@ -1,0 +1,422 @@
+{% extends "base2.html" %}
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>
+    {% block head_title %}IoT Platform_Home{% endblock %}
+  </title>
+  
+  
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  
+  <link href="./assets/js/plugins/nucleo/css/nucleo.css" rel="stylesheet" />
+  <link href="./assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
+  
+  <link href="./assets/css/argon-dashboard.css?v=1.1.0" rel="stylesheet" />
+  <!--<link href="./assets/css/argon-dashboard.css?v=1.1.0" rel="stylesheet" />-->
+  <link href="../static/css/argon-dashboard.css" rel="stylesheet">
+
+</head>
+
+<body class="">
+  <!--Nav sidebar-->
+	{% block content %}
+  <div class="main-content">
+    <!-- Navbar -->
+    <div class="main-content">
+    <!-- Navbar -->
+      <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+        <div class="container-fluid">
+          <!-- Brand -->
+          <li class="h2 mb-0 text-white  d-none d-md-inline-block">{% block subject %}IoT Platform{% endblock %}</li>
+          <!-- Form -->
+          <!-- User -->
+        </div>
+      </nav>
+      <!-- End Navbar -->
+    <!-- Header -->
+	 
+    <div class="header bg-gradient-deep-gray pb-8 pt-5 pt-md-8">
+      <div class="container-fluid">
+        <div class="header-body">
+          <!-- Card stats -->
+          <div class="row">
+			      <div class="col">
+              <ul class="nav nav-pills ">
+                    <li class="nav-item col-xl-4 col-lg-6" data-toggle="chart">
+                      <a href="{% url 'Index' %}" class="col btn btn-color02">
+                        <span class="d-none d-md-block">Community</span>
+                        <span class="d-md-none">Community</span>
+                      </a>
+                    </li>
+                    <li class="nav-item col-xl-4 col-lg-6 " data-toggle="chart">
+                      <a href="{% url 'Smarthome' %}" class="col btn btn-color02 active">
+                        <span class="d-none d-md-block">Home</span>
+                        <span class="d-md-none">Home</span>
+                      </a>
+                    </li>
+					          <li class="nav-item col-xl-4 col-lg-6" data-toggle="chart">
+                      <a href="{% url 'Smartoffice' %}" class="col btn btn-color02">
+                        <span class="d-none d-md-block">Office</span>
+                        <span class="d-md-none">Office</span>
+                      </a>
+                    </li>
+					          <!--<li class="nav-item col-xl-3 col-lg-6" >
+                      <a href="{% url 'Smartparking' %}" class="col btn btn-color02">
+                        <span class="d-none d-md-block">Parking</span>
+                        <span class="d-md-none">Parking</span>
+                      </a>
+                    </li>-->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	 
+	   
+    <div class="container-fluid mt--7">
+		<!--Model-->
+      <div class="row">
+        <div class="col-xl-9 mb-5 mb-xl-0" >
+          <div id="myCarousel" class="card bg-gradient-color shadow carousel slide" style="position: relative;">
+            <div class="card-header bg-transparent" style="z-index: 10;">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h6 class="text-uppercase text-light ls-1 mb-1"></h6>
+                  <h2 class="text-white mb-0">Home</h2>
+                </div>
+
+              </div>
+            </div>
+            
+          <!--{% load static %}-->
+            <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active">
+                <img class="" src="{% static 'images/house02.png' %}" style="max-width: 80%">
+              </div> 
+            </div>
+                <!--<div class="card-body"  style="z-index: 0;">
+                  
+                  <div class="chart">
+                    
+                    <canvas id="chart-sales" class="chart-canvas"></canvas>
+              
+                  </div>
+                </div>-->
+          </div>
+          </br>
+          
+        
+        
+          <div class="header-body">
+            <!-- Card stats -->
+            <div class="row">
+              <div class="col-xl-3 col-lg-3">
+                <div class="card card-stats mb-4 mb-xl-0">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col">
+                        <h4 class="card-title text-muted mb-0">Buzzer</h4>
+                        
+                      </div>
+                      <div class="col-auto">
+                        <ul class="nav nav-pills ">
+                          <form action="/mqtt_publisher/" method="get"></form>
+                            <a class="btn btn-sm btn-light03 py-2 px-3" id="buzzer_on">
+                            <span class="d-none d-md-block">ON</span>
+                            <span class="d-md-none">on</span>
+                            </a>
+                          
+                          
+                        </ul>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-3">
+                <div class="card card-stats mb-4 mb-xl-0">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col">
+                        <h4 class="card-title text-muted mb-0">Relay</h4>
+                        
+                      </div>
+                      <div class="col-auto">
+                        <ul class="nav nav-pills ">
+                          <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales" >
+                            <form action="/mqtt_publisher/" method="get"></form>
+                            <a href="" class="nav-link py-2 px-3 active" data-toggle="tab" id="relay_on">
+                            <span class="d-none d-md-block">ON</span>
+                            <span class="d-md-none">on</span>
+                            </a>
+                          </li>
+                          <li class="nav-item" data-toggle="chart" data-target="#chart-sales" >
+                            <form action="/mqtt_publisher/" method="get"></form>
+                            <a href="" class="nav-link py-2 px-3" data-toggle="tab" id="relay_off">
+                            <span class="d-none d-md-block">OFF</span>
+                            <span class="d-md-none">off</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="card shadow">
+            <div class="card-header bg-transparent">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h6 class="text-uppercase text-muted ls-1 mb-1"></h6>
+                  <h2 class="mb-0">Sensors</h2>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+				        <div class="card-body" style="display:none" id = "div_A00101">
+                  <div class="row">
+                    <div class="col">
+                      <form action="/data_update/" method="get">
+                        <table>
+                          <tr>
+                          <td><h4 class="card-title  text-muted mb-0">Temperature</h4></td>
+                          <td><h4 class="card-title text-info mb-0"></h4></td>
+                          </tr>
+                          <tr>
+                          <td><span class="h2 font-weight-bold mb-0" id='A00101'></span></td>
+                          </tr>
+                          </table>
+                      </form>
+                    </div>
+                    <div class="col-auto">
+                      <div class="col icon icon-shape">
+                        <a href="{% url 'detail_A00101' %}" class="btn btn-sm btn-color01">status</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+				        <div class="card-body" style="display:none" id = "div_A00102">
+                  <div class="row">
+                    <div class="col">
+                      <form action="/data_update/" method="get">
+                        <table>
+                          <tr>
+                          <td><h4 class="card-title  text-muted mb-0">Humidity</h4></td>
+                          <td><h4 class="card-title text-info mb-0">&nbsp;(RH)</h4></td>
+                          </tr>
+                          <tr>
+                          <td><span class="h2 font-weight-bold mb-0" id='A00102'></span></td>
+                          </tr>
+                          </table>
+                      </form>
+                    </div>
+                    <div class="col-auto">
+                      <div class="col icon icon-shape">
+                        <a href="{% url 'detail_A00102' %}" class="btn btn-sm btn-color01">status</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+				        <div class="card-body" style="display:none" id = "div_B30101">
+                  <div class="row">
+                    <div class="col">
+                      <form action="/data_update/" method="get">
+                        <table>
+                          <tr>
+                          <td><h4 class="card-title  text-muted mb-0">Gas</h4></td>
+                          <td><h4 class="card-title text-info mb-0">&nbsp;(ppm)</h4></td>
+                          </tr>
+                          <tr>
+                          <td><span class="h2 font-weight-bold mb-0" id='B30101'></span></td>
+                          </tr>
+                          </table>
+                      </form>
+                    </div>
+                    <div class="col-auto">
+                      <div class="col icon icon-shape">
+                        <a href="{% url 'detail_B30101' %}" class="btn btn-sm btn-color01">status</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+				        <div class="card-body" style="display:none" id = "div_B00101">
+                  <div class="row">
+                    <div class="col">
+                      <form action="/data_update/" method="get">
+                        <table>
+                          <tr>
+                          <td><h4 class="card-title text-uppercase text-muted mb-0">PM2.5</h4></td>
+                          <td><h4 class="card-title text-info mb-0">&nbsp;(㎍/㎥)</h4></td>
+                          </tr>
+                          <tr>
+                          <td><span class="h2 font-weight-bold mb-0" id='B00101'></span></td>
+                          </tr>
+                          </table>
+                      </form>
+                    </div>
+                    <div class="col-auto">
+                      <div class="col icon icon-shape">
+                        <a href="{% url 'detail_B00101' %}" class="btn btn-sm btn-color01">status</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+				        <div class="card-body" style="display:none" id = "div_A30101">
+                  <div class="row">
+                    <div class="col">
+                      <form action="/data_update/" method="get">
+                        <table>
+                        <tr>
+                        <td><h4 class="card-title  text-muted mb-0">Light</h4></td>
+                        <td><h4 class="card-title text-info mb-0">&nbsp;(Lux)</h4></td>
+                        </tr>
+                        <tr>
+                        <td><span class="h2 font-weight-bold mb-0" id='A30101'></span></td>
+                        </tr>
+                        </table>
+                      </form>
+                    </div>
+                    <div class="col-auto">
+                      <div class="col icon icon-shape">
+                        <a href="{% url 'detail_A30101' %}" class="btn btn-sm btn-color01">status</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+				        <div class="card-body" style="display:none" id = "div_A40101">
+                  <div class="row">
+                    <div class="col">
+                      <form action="/data_update/" method="get">
+                        <table>
+                          <tr>
+                          <td><h4 class="card-title text-uppercase text-muted mb-0">CO₂</h4></td>
+                          <td><h4 class="card-title text-info mb-0">&nbsp;(ppm)</h4></td>
+                          </tr>
+                          <tr>
+                          <td><span class="h2 font-weight-bold mb-0" id='A40101'></span></td>
+                          </tr>
+                          </table>
+                      </form>
+                    </div>
+                    <div class="col-auto">
+
+                      <div class="col icon icon-shape">
+                        <a href="{% url 'detail_A40101' %}" class="btn btn-sm btn-color01">status</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+				        <div class="card-body" style="display:none" id = "div_A70101">
+                  <div class="row">
+                    <div class="col">
+                      <form action="/data_update/" method="get">
+                        <table>
+                        <tr>
+                        <td><h4 class="card-title  text-muted mb-0">Loudness</h4></td>
+                        <td><h4 class="card-title text-info mb-0">&nbsp;</h4></td>
+                        </tr>
+                        <tr>
+                        <td><span class="h2 font-weight-bold mb-0" id='A70101'></span></td>
+                        </tr>
+                        </table>
+                      </form>
+                    </div>
+                    <div class="col-auto">
+
+                      <div class="col icon icon-shape">
+                        <a href="{% url 'detail_A70101' %}" class="btn btn-sm btn-color01">status</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+				        <div class="card-body" style="display:none" id = "div_A90101">
+                  <div class="row">
+                    <div class="col">
+                      <form action="/data_update/" method="get">
+                        <table>
+                        <tr>
+                        <td><h4 class="card-title  text-muted mb-0">IR Distance</h4></td>
+                        <td><h4 class="card-title text-info mb-0">&nbsp;(cm)</h4></td>
+                        </tr>
+                        <tr>
+                        <td><span class="h2 font-weight-bold mb-0" id='A90101'></span></td>
+                        </tr>
+                        </table>
+                      </form>
+                    </div>
+                    <div class="col-auto">
+
+                      <div class="col icon icon-shape">
+                        <a href="{% url 'detail_A90101' %}" class="btn btn-sm btn-color01">status</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+				        <div class="card-body" style="display:none" id = "div_A50101">
+                  <div class="row">
+                    <div class="col">
+                      <form action="/data_update/" method="get">
+                        <table>
+                        <tr>
+                        <td><h4 class="card-title  text-muted mb-0">Hall</h4></td>
+                        <td><h4 class="card-title text-info mb-0">&nbsp;</h4></td>
+                        </tr>
+                        <tr>
+                        <td><span class="h2 font-weight-bold mb-0" id='A50101'></span></td>
+                        </tr>
+                        </table>
+                      </form>
+                    </div>
+                    <div class="col-auto">
+
+                      <div class="col icon icon-shape">
+                        <a href="{% url 'detail_A50101' %}" class="btn btn-sm btn-color01">status</a>
+                      </div>
+                    </div>
+					  
+                  </div>
+
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script type="text/javascript" src="{% static 'js/index_dataupdate.js' %}"></script>
+		<!--endModel-->
+    </div>
+	  
+    </div>
+    
+  </div>
+  
+  {% endblock %}
+  <!--   Core   -->
+  <script src="./assets/js/plugins/jquery/dist/jquery.min.js"></script>
+  <script src="./assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!--   Argon JS   -->
+  <!--<script src="./assets/js/argon-dashboard.min.js?v=1.1.0"></script>
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>-->
+  <script>
+    window.TrackJS &&
+      TrackJS.install({
+        token: "ee6fab19c5a04ac1a32a645abde4613a",
+        application: "argon-dashboard-free"
+      });
+  </script>
+	
+	
+</body>
+
+</html>

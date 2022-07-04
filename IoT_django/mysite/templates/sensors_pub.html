@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- Buzzer & Relay -->
+<div class="header-body">
+    <div class="row">
+        <div class="col-xl-3 col-lg-3">
+            <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="card-title text-muted mb-0">Buzzer</h4>
+
+                        </div>
+                        <div class="col-auto">
+                            <ul class="nav nav-pills ">
+                                <form action="/mqtt_publisher/" method="get"></form>
+                                <a class="btn btn-sm btn-light03 py-2 px-3" id="buzzer_on">
+                                    <span class="d-none d-md-block">ON</span>
+                                    <span class="d-md-none">on</span>
+                                </a>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-3">
+            <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="card-title text-muted mb-0">Relay</h4>
+
+                        </div>
+                        <div class="col-auto">
+                            <ul class="nav nav-pills ">
+                                <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales">
+                                    <form action="/mqtt_publisher/" method="get"></form>
+                                    <a href="" class="nav-link py-2 px-3 active" data-toggle="tab" id="relay_on">
+                                        <span class="d-none d-md-block">ON</span>
+                                        <span class="d-md-none">on</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item" data-toggle="chart" data-target="#chart-sales">
+                                    <form action="/mqtt_publisher/" method="get"></form>
+                                    <a href="" class="nav-link py-2 px-3" data-toggle="tab" id="relay_off">
+                                        <span class="d-none d-md-block">OFF</span>
+                                        <span class="d-md-none">off</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

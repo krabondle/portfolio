@@ -1,0 +1,82 @@
+{% extends "account/base1.html" %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	{% load i18n %}
+	{% load account socialaccount %}
+
+	
+  <title>
+    {% block head_title %}{% trans "Signup" %}{% endblock %}
+  </title>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <!-- Icons -->
+  <link href="../assets/js/plugins/nucleo/css/nucleo.css" rel="stylesheet" />
+  <link href="../assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link href="../../static/css/argon-dashboard.css" rel="stylesheet" />
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/argon-dashboard.css' %}">
+	
+</head>
+<!--{#% extends "base_generic.html" %}-->
+
+
+<body class="bg-color01">
+<!-- Header -->
+	<div class="header bg-gradient-deep-gray py-7 py-lg-8">
+      <div class="container">
+        <div class="header-body text-center mb-7">
+          <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-6">
+              <h1 class="text-white">Welcome!</h1>
+              <p class="text-lead text-light">Sign up your own account for IoT.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="separator separator-bottom separator-skew zindex-100">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-color01" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </div>	
+
+
+
+<!-- Page content -->
+	<div class="container mt--8 pb-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-7">
+          <div class="card bg-secondary shadow border-0">
+			  
+			  <div class="card-body px-lg-5 py-lg-5">	
+{% block content %}
+<h1>{% trans "Sign Up" %}</h1>
+
+<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">Login</a>.{% endblocktrans %}</p>
+
+<form class="signup" method="post" action="{% url 'account_signup' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+  <button class="btn primaryAction input-group-alternative" type="submit">{% trans "Sign Up" %} &raquo;</button>
+</form>
+{% endblock %}
+
+				  
+				   </div>
+
+			</div>
+		  </div>
+		</div>
+</body>
+	
+</html>

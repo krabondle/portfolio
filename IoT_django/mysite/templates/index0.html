@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+{% extends "base2.html" %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>
+    {% block head_title %}IoT Platform_Community{% endblock %}
+  </title>
+  <link href="./assets/js/plugins/nucleo/css/nucleo.css" rel="stylesheet" />
+  <link href="./assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
+  <!--<link href="./assets/css/argon-dashboard.css?v=1.1.0" rel="stylesheet" />-->
+  <link href="../static/css/argon-dashboard.css" rel="stylesheet">
+</head>
+
+<body class="">
+  <!--Nav sidebar-->
+  {% block content %}
+  <div class="main-content">
+    <!-- Navbar -->
+    <div class="main-content">
+      <!-- Navbar -->
+      <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main ">
+        <div class="container-fluid">
+          <!-- Brand -->
+          <li class="h2 mb-0 text-white  d-none d-md-inline-block">{% block subject %}IoT Platform{% endblock %}</li>
+          <!-- Form -->
+
+          <!-- User -->
+
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <!-- Header -->
+
+      <div class="header bg-gradient-deep-gray pb-8 pt-5 pt-md-8">
+        <div class="container-fluid">
+          <div class="header-body">
+            <!-- Card stats -->
+            <div class="row">
+              <div class="col">
+                <ul class="nav nav-pills ">
+                  <li class="nav-item col-xl-4 col-lg-6" data-toggle="chart">
+                    {% if title == 'Community' %}
+                     <a href="{% url 'Index' %}" class="col btn btn-color02 active">
+                    {% else %}
+                      <a href="{% url 'Index' %}" class="col btn btn-color02 ">
+                    {% endif %}
+                      <span class="d-none d-md-block">Community</span>
+                      <span class="d-md-none">Community</span>
+                    </a>
+                  </li>
+                  <li class="nav-item col-xl-4 col-lg-6 " data-toggle="chart">
+                    {% if title == 'Home' %}
+                     <a href="{% url 'Smarthome' %}" class="col btn btn-color02 active">
+                    {% else %}
+                      <a href="{% url 'Smarthome' %}" class="col btn btn-color02 ">
+                    {% endif %}
+                      <span class="d-none d-md-block">Home</span>
+                      <span class="d-md-none">Home</span>
+                    </a>
+                  </li>
+                  <li class="nav-item col-xl-4 col-lg-6" data-toggle="chart">
+                    {% if title == 'Office' %}
+                     <a href="{% url 'Smartoffice' %}" class="col btn btn-color02 active">
+                    {% else %}
+                      <a href="{% url 'Smartoffice' %}" class="col btn btn-color02 ">
+                    {% endif %}
+                      <span class="d-none d-md-block">Office</span>
+                      <span class="d-md-none">Office</span>
+                    </a>
+                  </li>
+                  <!--<li class="nav-item col-xl-3 col-lg-6" >
+                      <a href="{% url 'Smartparking' %}" class="col btn btn-color02">
+                        <span class="d-none d-md-block">Parking</span>
+                        <span class="d-md-none">Parking</span>
+                      </a>
+                    </li>-->
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="container-fluid mt--7">
+        <!--Model-->
+        <div class="row">
+          <div class="col-xl-9 mb-5 mb-xl-0">
+            {% load static %}
+            {% include "interactive.html" %}
+            <br/>
+            <!--test-->
+            {% include "sensors_pub.html" %}
+          </div>
+          {% include "sensors_sub.html" %}
+          
+        </div>
+        <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/index_dataupdate.js' %}"></script>
+        <!--endModel-->
+      </div>
+    </div>
+    <!--   Core   -->
+  </div>
+  {% endblock %}
+    <script>
+      window.TrackJS &&
+        TrackJS.install({
+          token: "ee6fab19c5a04ac1a32a645abde4613a",
+          application: "argon-dashboard-free"
+        });
+    </script>
+</body>
+
+</html>

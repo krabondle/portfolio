@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <meta charset='utf-8'>
+    
+    <title>{% block head_title %}{% endblock %}</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="{% static 'css/argon-dashboard.css' %}">
+<link rel="stylesheet" href="{% static 'css/all.css' %}">
+<link rel="stylesheet" href="{% static 'css/nucleo.css' %}">
+
+<!-- Optional theme -->
+
+
+<!-- Latest compiled and minified JavaScript -->
+<!--
+<style>
+h1, h2, h3, h4, h5, p, div {
+    font-family: fantasy;
+}
+</style>-->
+</head>
+<body>
+{% include "sidebar-L.html" %}
+
+{% block content %}{% endblock %}
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+
+</body>
+</html>

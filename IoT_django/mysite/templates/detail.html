@@ -1,0 +1,185 @@
+{% extends "base2.html" %}
+<!--
+
+=========================================================
+* Argon Dashboard - v1.1.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/argon-dashboard
+* Copyright 2019 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>
+    {% block head_title %}IoT: Sensor-Status{% endblock %}
+  </title>
+  <!-- Favicon -->
+  <link href="../assets/img/brand/favicon.png" rel="icon" type="image/png">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <!-- Icons -->
+  <link href="../assets/js/plugins/nucleo/css/nucleo.css" rel="stylesheet" />
+  <link href="../static/css/all.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link href="../static/css/argon-dashboard.css" rel="stylesheet" />
+  
+</head>
+
+<body class="">
+
+<!--Nav sidebar-->
+{% block content %}
+
+  <div class="main-content">
+    <!-- Navbar -->
+    <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+      <div class="container-fluid">
+        <!-- Brand -->
+        <li class="h2 mb-0 text-white text-uppercase d-none d-lg-inline-block">Status
+        </li>
+        <!-- Form -->
+
+        <!-- User -->
+
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    <!-- Header -->
+    <div class="header bg-gradient-color pb-8 pt-5 pt-md-8">
+      <div class="container-fluid">
+        <div class="header-body">
+          <form class=" mr-2  d-md-flex ml-lg-auto" method="get">
+            {% csrf_token %}
+            <p>
+              <h1>From :</h1>
+            </p>&nbsp;
+            <div class="form-group mb-0">
+              <div class="input-group input-group-alternative">
+                <!--<div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-search"></i></span>
+              </div>-->
+
+                <input class="form-control" placeholder="Search" type="date" name="firstdate">
+              </div>
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <p>
+              <h1>To :</h1>
+            </p>&nbsp;
+            <div class="form-group">
+              <div class="input-group input-group-alternative">
+                <!--<td>{#{ form.password.label_tag }}</td>-->
+                <!--<div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-search"></i></span>
+              </div>-->
+                <input class="form-control" placeholder="Search" type="date" name="lastdate">
+              </div>
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="form-group">
+              <div class="input-group input-group-alternative">
+                <input class="form-control" value="search" type="submit">
+              </div>
+            </div>
+          </form>
+          <!-- Card stats -->
+        </div>
+      </div>
+      <br />
+
+
+      <div class="col-xl-12 mb-5 mb-xl-0">
+        <div class="card bg-gradient-deep-gray shadow">
+          <div class="card-header bg-transparent">
+            <div class="row align-items-center">
+              <div class="col">
+                <h6 class="text-uppercase text-light ls-1 mb-1">chart</h6>
+                <span class="h1 text-white" id='sensor_id'>{{sensor_name}}</span>&nbsp;<span class="h2 text-white mb-0">Sensor</span>
+              </div>
+              <!--
+              <div class="col">
+                <ul class="nav nav-pills justify-content-end">
+                  <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales"
+                    data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-prefix="$"
+                    data-suffix="k">
+                    <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
+                      <span class="d-none d-md-block">Month</span>
+                      <span class="d-md-none">M</span>
+                    </a>
+                  </li>
+                  <li class="nav-item" data-toggle="chart" data-target="#chart-sales"
+                    data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-prefix="$"
+                    data-suffix="k">
+                    <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
+                      <span class="d-none d-md-block">Week</span>
+                      <span class="d-md-none">W</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            -->
+            </div>
+          </div>
+          <div class="card-body">
+            <!-- Chart -->
+            <div class="chart">
+              <div class='row'>
+                <div class='col-sm-12' url-endpoint='{#% url "api-data" %}'>
+                    <div class='col-sm-12'>
+                        <canvas id="myChart2" width="200" height="100"></canvas>
+                    </div>
+                    <div class='col-sm-12' id="nodata" style="color:white; font-size:72px">
+                        No data for the selected period
+                    </div>
+                </div>
+              </div>
+              <!-- Chart wrapper -->
+              {% load static %}
+              <script  type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+              <script  type="text/javascript" src="{% static 'js/Chart.min.js' %}"></script>
+              <script  type="text/javascript">
+                //$(document).ready(function () {
+                  var labels = {{labels|safe}};
+                  var defaultData = {{defaultData|safe}};
+                  var Isupdate = {{Isupdate|safe}};
+              </script>
+              <script  type="text/javascript" src="{% static 'js/detail_chart.js' %}"></script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      <!-- Dark table -->
+      
+      <!-- Footer -->
+
+  {% endblock %}
+  <!--   Core   -->
+  <!-- <script src="../static/js/jquery.min.js"></script>
+  <script src="../assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
+  
+
+  <!--   Argon JS   -->
+  <script src="../assets/js/argon-dashboard.min.js?v=1.1.0"></script>
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS &&
+      TrackJS.install({
+        token: "ee6fab19c5a04ac1a32a645abde4613a",
+        application: "argon-dashboard-free"
+      });
+  </script>
+</body>
+
+</html>

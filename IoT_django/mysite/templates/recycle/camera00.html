@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block head_title %}IOT: Camera{% endblock %}
+{% load static %}
+{% block content %}
+<div class="main-content">
+  <!-- Navbar -->
+  <div class="main-content">
+    <div class="container-fluid" style="width: 100%; height: 0; ">
+      <div class="row" style="width: 100%;">
+        <div style="position: relative; margin: 0 5%">
+          <div><img src="{% static 'images/screen0.png' %}" style="width: 86%;"></div>
+          <!--<iframe src="https://192.168.60.21:8000/camera/" style="width: 100%; height: 100%"></iframe>-->
+          <img style="margin:1% 3%; position:absolute; width:80%;" src="http://192.168.60.21:8000/stream/">
+          <img src="{% static 'images/screen1.png' %}" style=" width: 86%">
+        </div>
+      </div>
+      {% include "footer.html" %}
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

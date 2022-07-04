@@ -1,0 +1,1079 @@
+﻿<!DOCTYPE html>
+<div class="col-xl-12">
+    <div class="">
+<!--
+        <div class="card-header bg-transparent">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h6 class="text-uppercase text-muted ls-1 mb-1"></h6>
+                    <h2 class="mb-0">Sensors</h2>
+                </div>
+            </div>
+        </div>
+-->
+        <div class="">
+            <!-- Chart -->
+            {% if title == 'Community'%}
+            <div class="row">
+                <div class="col-xl-3 col-lg-3" id="div_A00101">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <form action="/data_update/" method="get">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <h4 class="card-title text-muted mb-0">Temperature</h4>
+                                                </td>
+                                                <td>
+                                                    <h4 class="card-title text-info mb-0"></h4>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="h2 font-weight-bold mb-0" id='A00101'></span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="col icon icon-shape">
+                                        <a href="{% url 'detail_A00101' %}" class="btn btn-sm btn-color01">status</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3" id="div_A00102">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <form action="/data_update/" method="get">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <h4 class="card-title text-muted mb-0">Humidity</h4>
+                                                </td>
+                                                <td>
+                                                    <h4 class="card-title text-info mb-0">&nbsp;(RH)</h4>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="h2 font-weight-bold mb-0" id='A00102'></span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                                <div class="col-auto">
+
+                                    <div class="col icon icon-shape">
+                                        <a href="{% url 'detail_A00102' %}" class="btn btn-sm btn-color01">status</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3" id="div_B10101">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <form action="/data_update/" method="get">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <h4 class="card-title text-muted mb-0">Ultrasonic</h4>
+                                                </td>
+                                                <td>
+                                                    <h4 class="card-title text-info mb-0">&nbsp;(cm)</h4>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="h2 font-weight-bold mb-0" id='B10101'></span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="col icon icon-shape">
+                                        <a href="{% url 'detail_B10101' %}" class="btn btn-sm btn-color01">status</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3" id="div_B30101">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <form action="/data_update/" method="get">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <h4 class="card-title  text-muted mb-0">Gas</h4>
+                                                </td>
+                                                <td>
+                                                    <h4 class="card-title text-info mb-0">&nbsp;(ppm)</h4>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="h2 font-weight-bold mb-0" id='B30101'></span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                                <div class="col-auto">
+
+                                    <div class="col icon icon-shape">
+                                        <a href="{% url 'detail_B30101' %}" class="btn btn-sm btn-color01">status</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-3 col-lg-3" id="div_B20101">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <form action="/data_update/" method="get">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <h4 class="card-title  text-muted mb-0">Pressure</h4>
+                                                </td>
+                                                <td>
+                                                    <h4 class="card-title text-info mb-0">&nbsp;(KPa)</h4>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="h2 font-weight-bold mb-0" id='B20101'></span></td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                                <div class="col-auto">
+
+                                    <div class="col icon icon-shape">
+                                        <a href="{% url 'detail_B20101' %}" class="btn btn-sm btn-color01">status</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-3" id="div_A40101">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <form action="/data_update/" method="get">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <h4 class="card-title text-uppercase text-muted mb-0">CO₂</h4>
+                                                </td>
+                                                <td>
+                                                    <h4 class="card-title text-info mb-0">&nbsp;(ppm)</h4>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="h2 font-weight-bold mb-0" id='A40101'></span></td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                                <div class="col-auto">
+
+                                    <div class="col icon icon-shape">
+                                        <a href="{% url 'detail_A40101' %}" class="btn btn-sm btn-color01">status</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3" id="div_B00101">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <form action="/data_update/" method="get">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <h4 class="card-title text-uppercase text-muted mb-0">PM2.5</h4>
+                                                </td>
+                                                <td>
+                                                    <h4 class="card-title text-info mb-0">&nbsp;(㎍/㎥)</h4>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="h2 font-weight-bold mb-0" id='B00101'></span></td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                                <div class="col-auto">
+
+                                    <div class="col icon icon-shape">
+                                        <a href="{% url 'detail_B00101' %}" class="btn btn-sm btn-color01">status</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3" id="div_A80101">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <form action="/data_update/" method="get">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <h4 class="card-title  text-muted mb-0">Motion</h4>
+                                                </td>
+                                                <td>
+                                                    <h4 class="card-title text-info mb-0">&nbsp;</h4>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="h2 font-weight-bold mb-0" id='A80101'></span></td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                                <div class="col-auto">
+
+                                    <div class="col icon icon-shape">
+                                        <a href="{% url 'detail_A80101' %}" class="btn btn-sm btn-color01">status</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-3 col-lg-3" id="div_A10101">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <form action="/data_update/" method="get">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <h4 class="card-title text-uppercase text-muted mb-0">UV</h4>
+                                                </td>
+                                                <td>
+                                                    <h4 class="card-title text-info mb-0">&nbsp;(UV Index)</h4>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="h2 font-weight-bold mb-0" id='A10101'></span></td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="col icon icon-shape">
+                                        <a href="{% url 'detail_A10101' %}" class="btn btn-sm btn-color01">status</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3" id="div_A30101">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <form action="/data_update/" method="get">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <h4 class="card-title  text-muted mb-0">Light</h4>
+                                                </td>
+                                                <td>
+                                                    <h4 class="card-title text-info mb-0">&nbsp;(Lux)</h4>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="h2 font-weight-bold mb-0" id='A30101'></span></td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="col icon icon-shape">
+                                        <a href="{% url 'detail_A30101' %}" class="btn btn-sm btn-color01">status</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3" id="div_A70101">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <form action="/data_update/" method="get">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <h4 class="card-title  text-muted mb-0">Loudness</h4>
+                                                </td>
+                                                <td>
+                                                    <h4 class="card-title text-info mb-0">&nbsp;</h4>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="h2 font-weight-bold mb-0" id='A70101'></span></td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                                <div class="col-auto">
+
+                                    <div class="col icon icon-shape">
+                                        <a href="{% url 'detail_A70101' %}" class="btn btn-sm btn-color01">status</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3" id="div_A90101">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <form action="/data_update/" method="get">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <h4 class="card-title  text-muted mb-0">IR Distance</h4>
+                                                </td>
+                                                <td>
+                                                    <h4 class="card-title text-info mb-0">&nbsp;(cm)</h4>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="h2 font-weight-bold mb-0" id='A90101'></span></td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                                <div class="col-auto">
+
+                                    <div class="col icon icon-shape">
+                                        <a href="{% url 'detail_A90101' %}" class="btn btn-sm btn-color01">status</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-3 col-lg-3" id="div_A50101">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <form action="/data_update/" method="get">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <h4 class="card-title  text-muted mb-0">Hall</h4>
+                                                </td>
+                                                <td>
+                                                    <h4 class="card-title text-info mb-0">&nbsp;</h4>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="h2 font-weight-bold mb-0" id='A50101'></span></td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                                <div class="col-auto">
+
+                                    <div class="col icon icon-shape">
+                                        <a href="{% url 'detail_A50101' %}" class="btn btn-sm btn-color01">status</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3" id="div_A60101">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <form action="/data_update/" method="get">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <h4 class="card-title  text-muted mb-0">Photo Interrupter</h4>
+                                                </td>
+                                                <td>
+                                                    <h4 class="card-title text-info mb-0">&nbsp;</h4>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="h2 font-weight-bold mb-0" id='A60101'></span></td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                                <div class="col-auto">
+
+                                    <div class="col icon icon-shape">
+                                        <a href="{% url 'detail_A60101' %}" class="btn btn-sm btn-color01">status</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3" id="div_A20101">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <form action="/data_update/" method="get">
+                                        <div class="nav nav-pills">
+                                            <h4 class="card-title  text-muted mb-0">Accelerometer</h4>
+                                            <h4 class="card-title text-info mb-0">&nbsp;(X,Y,Z)</h4>
+                                        </div>
+                                        <span class="h2 font-weight-bold mb-0" id='A20101'></span>
+                                    </form>
+                                </div>
+                                <div class="col-auto">
+
+                                    <div class="col icon icon-shape">
+                                        <!--<a href="{% url 'detail_A20101' %}" class="btn btn-sm btn-color01">status</a>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3" id="div_A20102">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <form action="/data_update/" method="get">
+                                        <div class="nav nav-pills">
+                                            <h4 class="card-title  text-muted mb-0">Gyroscope</h4>
+                                            <h4 class="card-title text-info mb-0">&nbsp;(X,Y,Z)</h4>
+                                        </div>
+                                        <span class="h2 font-weight-bold mb-0" id='A20102'></span>
+                                    </form>
+                                </div>
+                                <div class="col-auto">
+
+                                    <div class="col icon icon-shape">
+                                        <!--<a href="{% url 'detail_A20102' %}" class="btn btn-sm btn-color01">status</a>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-3 col-lg-3" id="div_A20103">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <form action="/data_update/" method="get">
+                                        <div class="nav nav-pills">
+                                            <h4 class="card-title  text-muted mb-0">Compass</h4>
+                                            <h4 class="card-title text-info mb-0">&nbsp;(X,Y,Z)</h4>
+                                        </div>
+                                        <span class="h2 font-weight-bold mb-0" id='A20103'></span></td>
+                                    </form>
+                                </div>
+                                <div class="col-auto">
+
+                                    <div class="col icon icon-shape">
+                                        <!--<a href="{% url 'detail_A20103' %}" class="btn btn-sm btn-color01">status</a>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="card-title text-muted mb-0">Buzzer</h4>
+
+                                </div>
+                                <div class="col-auto">
+                                    <ul class="nav nav-pills ">
+                                        <form action="/mqtt_publisher/" method="get"></form>
+                                        <a class="btn btn-sm btn-light03 py-2 px-3" id="buzzer_on">
+                                            <span class="d-none d-md-block">ON</span>
+                                            <span class="d-md-none">on</span>
+                                        </a>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="card-title text-muted mb-0">Relay</h4>
+
+                                </div>
+                                <div class="col-auto">
+                                    <ul class="nav nav-pills ">
+                                        <li class="nav-item mr-2 mr-md-0" data-toggle="chart"
+                                            data-target="#chart-sales">
+                                            <form action="/mqtt_publisher/" method="get"></form>
+                                            <a href="" class="nav-link py-2 px-3 active" data-toggle="tab"
+                                                id="relay_on">
+                                                <span class="d-none d-md-block">ON</span>
+                                                <span class="d-md-none">on</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item" data-toggle="chart" data-target="#chart-sales">
+                                            <form action="/mqtt_publisher/" method="get"></form>
+                                            <a href="" class="nav-link py-2 px-3" data-toggle="tab" id="relay_off">
+                                                <span class="d-none d-md-block">OFF</span>
+                                                <span class="d-md-none">off</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% elif title == 'Home'%}
+            <div class="card-body" style="display:none" id="div_A00101">
+                <div class="row">
+                    <div class="col">
+                        <form action="/data_update/" method="get">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h4 class="card-title  text-muted mb-0">Temperature</h4>
+                                    </td>
+                                    <td>
+                                        <h4 class="card-title text-info mb-0"></h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="h2 font-weight-bold mb-0" id='A00101'></span></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="col-auto">
+                        <div class="col icon icon-shape">
+                            <a href="{% url 'detail_A00101' %}" class="btn btn-sm btn-color01">status</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" style="display:none" id="div_A00102">
+                <div class="row">
+                    <div class="col">
+                        <form action="/data_update/" method="get">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h4 class="card-title  text-muted mb-0">Humidity</h4>
+                                    </td>
+                                    <td>
+                                        <h4 class="card-title text-info mb-0">&nbsp;(RH)</h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="h2 font-weight-bold mb-0" id='A00102'></span></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="col-auto">
+                        <div class="col icon icon-shape">
+                            <a href="{% url 'detail_A00102' %}" class="btn btn-sm btn-color01">status</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" style="display:none" id="div_B30101">
+                <div class="row">
+                    <div class="col">
+                        <form action="/data_update/" method="get">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h4 class="card-title  text-muted mb-0">Gas</h4>
+                                    </td>
+                                    <td>
+                                        <h4 class="card-title text-info mb-0">&nbsp;(ppm)</h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="h2 font-weight-bold mb-0" id='B30101'></span></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="col-auto">
+                        <div class="col icon icon-shape">
+                            <a href="{% url 'detail_B30101' %}" class="btn btn-sm btn-color01">status</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" style="display:none" id="div_B00101">
+                <div class="row">
+                    <div class="col">
+                        <form action="/data_update/" method="get">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h4 class="card-title text-uppercase text-muted mb-0">PM2.5</h4>
+                                    </td>
+                                    <td>
+                                        <h4 class="card-title text-info mb-0">&nbsp;(㎍/㎥)</h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="h2 font-weight-bold mb-0" id='B00101'></span></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="col-auto">
+                        <div class="col icon icon-shape">
+                            <a href="{% url 'detail_B00101' %}" class="btn btn-sm btn-color01">status</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" style="display:none" id="div_A30101">
+                <div class="row">
+                    <div class="col">
+                        <form action="/data_update/" method="get">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h4 class="card-title  text-muted mb-0">Light</h4>
+                                    </td>
+                                    <td>
+                                        <h4 class="card-title text-info mb-0">&nbsp;(Lux)</h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="h2 font-weight-bold mb-0" id='A30101'></span></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="col-auto">
+                        <div class="col icon icon-shape">
+                            <a href="{% url 'detail_A30101' %}" class="btn btn-sm btn-color01">status</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" style="display:none" id="div_A40101">
+                <div class="row">
+                    <div class="col">
+                        <form action="/data_update/" method="get">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h4 class="card-title text-uppercase text-muted mb-0">CO₂</h4>
+                                    </td>
+                                    <td>
+                                        <h4 class="card-title text-info mb-0">&nbsp;(ppm)</h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="h2 font-weight-bold mb-0" id='A40101'></span></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="col-auto">
+
+                        <div class="col icon icon-shape">
+                            <a href="{% url 'detail_A40101' %}" class="btn btn-sm btn-color01">status</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" style="display:none" id="div_A70101">
+                <div class="row">
+                    <div class="col">
+                        <form action="/data_update/" method="get">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h4 class="card-title  text-muted mb-0">Loudness</h4>
+                                    </td>
+                                    <td>
+                                        <h4 class="card-title text-info mb-0">&nbsp;</h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="h2 font-weight-bold mb-0" id='A70101'></span></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="col-auto">
+
+                        <div class="col icon icon-shape">
+                            <a href="{% url 'detail_A70101' %}" class="btn btn-sm btn-color01">status</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" style="display:none" id="div_A90101">
+                <div class="row">
+                    <div class="col">
+                        <form action="/data_update/" method="get">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h4 class="card-title  text-muted mb-0">IR Distance</h4>
+                                    </td>
+                                    <td>
+                                        <h4 class="card-title text-info mb-0">&nbsp;(cm)</h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="h2 font-weight-bold mb-0" id='A90101'></span></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="col-auto">
+
+                        <div class="col icon icon-shape">
+                            <a href="{% url 'detail_A90101' %}" class="btn btn-sm btn-color01">status</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" style="display:none" id="div_A50101">
+                <div class="row">
+                    <div class="col">
+                        <form action="/data_update/" method="get">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h4 class="card-title  text-muted mb-0">Hall</h4>
+                                    </td>
+                                    <td>
+                                        <h4 class="card-title text-info mb-0">&nbsp;</h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="h2 font-weight-bold mb-0" id='A50101'></span></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="col-auto">
+
+                        <div class="col icon icon-shape">
+                            <a href="{% url 'detail_A50101' %}" class="btn btn-sm btn-color01">status</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            {% elif title == 'Office'%}
+            <div class="card-body" style="display:none" id="div_A00101">
+                <div class="row">
+                    <div class="col">
+                        <form action="/data_update/" method="get"></form>
+                        <table>
+                            <tr>
+                                <td>
+                                    <h4 class="card-title  text-muted mb-0">Temperature</h4>
+                                </td>
+                                <td>
+                                    <h4 class="card-title text-info mb-0"></h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="h2 font-weight-bold mb-0" id='A00101'></span></td>
+                            </tr>
+                        </table>
+                        </form>
+                    </div>
+                    <div class="col-auto">
+
+                        <div class="col icon icon-shape">
+                            <a href="{% url 'detail_A00101' %}" class="btn btn-sm btn-color01">status</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card-body" style="display:none" id="div_A00102">
+                <div class="row">
+                    <div class="col">
+                        <form action="/data_update/" method="get"></form>
+                        <table>
+                            <tr>
+                                <td>
+                                    <h4 class="card-title  text-muted mb-0">Humidity</h4>
+                                </td>
+                                <td>
+                                    <h4 class="card-title text-info mb-0">&nbsp;(RH)</h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="h2 font-weight-bold mb-0" id='A00102'></span></td>
+                            </tr>
+                        </table>
+                        </form>
+                    </div>
+                    <div class="col-auto">
+
+                        <div class="col icon icon-shape">
+                            <a href="{% url 'detail_A00102' %}" class="btn btn-sm btn-color01">status</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" style="display:none" id="div_B10101">
+                <div class="row">
+                    <div class="col">
+                        <form action="/data_update/" method="get"></form>
+                        <table>
+                            <tr>
+                                <td>
+                                    <h4 class="card-title  text-muted mb-0">Ultrasonic</h4>
+                                </td>
+                                <td>
+                                    <h4 class="card-title text-info mb-0">&nbsp;(cm)</h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="h2 font-weight-bold mb-0" id='B10101'></span></td>
+                            </tr>
+                        </table>
+                        </form>
+                    </div>
+                    <div class="col-auto">
+
+                        <div class="col icon icon-shape">
+                            <a href="{% url 'detail_B10101' %}" class="btn btn-sm btn-color01">status</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" style="display:none" id="div_A40101">
+                <div class="row">
+                    <div class="col">
+                        <form action="/data_update/" method="get">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h4 class="card-title text-uppercase text-muted mb-0">CO₂</h4>
+                                    </td>
+                                    <td>
+                                        <h4 class="card-title text-info mb-0">&nbsp;(ppm)</h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="h2 font-weight-bold mb-0" id='A40101'></span></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="col-auto">
+
+                        <div class="col icon icon-shape">
+                            <a href="{% url 'detail_A40101' %}" class="btn btn-sm btn-color01">status</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" style="display:none" id="div_A30101">
+                <div class="row">
+                    <div class="col">
+                        <form action="/data_update/" method="get">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h4 class="card-title  text-muted mb-0">Light</h4>
+                                    </td>
+                                    <td>
+                                        <h4 class="card-title text-info mb-0">&nbsp;(Lux)</h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="h2 font-weight-bold mb-0" id='A30101'></span></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="col-auto">
+
+                        <div class="col icon icon-shape">
+                            <a href="{% url 'detail_A30101' %}" class="btn btn-sm btn-color01">status</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" style="display:none" id="div_A60101">
+                <div class="row">
+                    <div class="col">
+                        <form action="/data_update/" method="get">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h4 class="card-title  text-muted mb-0">Photo Interrupter</h4>
+                                    </td>
+                                    <td>
+                                        <h4 class="card-title text-info mb-0">&nbsp;</h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="h2 font-weight-bold mb-0" id='A60101'></span></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="col-auto">
+
+                        <div class="col icon icon-shape">
+                            <a href="{% url 'detail_A60101' %}" class="btn btn-sm btn-color01">status</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" style="display:none" id="div_A20101">
+                <div class="row">
+                    <div class="col">
+                        <form action="/data_update/" method="get">
+                            <div class="nav nav-pills">
+                                <h4 class="card-title  text-muted mb-0">Accelerometer</h4>
+                                <h4 class="card-title text-info mb-0">&nbsp;(X,Y,Z)</h4>
+                            </div>
+                            <span class="h2 font-weight-bold mb-0" id='A20101'></span>
+                        </form>
+                    </div>
+                    <div class="col-auto">
+
+                        <div class="col icon icon-shape">
+                            <!--<a href="{% url 'detail_A20101' %}" class="btn btn-sm btn-color01">status</a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" style="display:none" id="div_A20102">
+                <div class="row">
+                    <div class="col">
+                        <form action="/data_update/" method="get">
+                            <div class="nav nav-pills">
+                                <h4 class="card-title  text-muted mb-0">Gyroscope</h4>
+                                <h4 class="card-title text-info mb-0">&nbsp;(X,Y,Z)</h4>
+                            </div>
+                            <span class="h2 font-weight-bold mb-0" id='A20102'></span>
+                        </form>
+                    </div>
+                    <div class="col-auto">
+
+                        <div class="col icon icon-shape">
+                            <!--<a href="{% url 'detail_A20102' %}" class="btn btn-sm btn-color01">status</a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" style="display:none" id="div_A20103">
+                <div class="row">
+                    <div class="col">
+                        <form action="/data_update/" method="get">
+                            <div class="nav nav-pills">
+                                <h4 class="card-title  text-muted mb-0">Compass</h4>
+                                <h4 class="card-title text-info mb-0">&nbsp;(X,Y,Z)</h4>
+                            </div>
+                            <span class="h2 font-weight-bold mb-0" id='A20103'></span></td>
+                        </form>
+                    </div>
+                    <div class="col-auto">
+
+                        <div class="col icon icon-shape">
+                            <!--<a href="{% url 'detail_A20103' %}" class="btn btn-sm btn-color01">status</a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" style="display:none" id="div_A80101">
+                <div class="row">
+                    <div class="col">
+                        <form action="/data_update/" method="get"></form>
+                        <table>
+                            <tr>
+                                <td>
+                                    <h4 class="card-title  text-muted mb-0">Motion</h4>
+                                </td>
+                                <td>
+                                    <h4 class="card-title text-info mb-0">&nbsp;</h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="h2 font-weight-bold mb-0" id='A80101'></span></td>
+                            </tr>
+                        </table>
+                        </form>
+                    </div>
+                    <div class="col-auto">
+
+                        <div class="col icon icon-shape">
+                            <a href="{% url 'detail_A80101' %}" class="btn btn-sm btn-color01">status</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

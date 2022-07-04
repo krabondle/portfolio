@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<div id="myCarousel" class="card bg-gradient-color shadow carousel slide">
+  <div class="card-header bg-transparent">
+    <div class="row align-items-center">
+      <div class="col">
+        <h6 class="text-uppercase text-light ls-1 mb-1"></h6>
+        <h2 class="text-white mb-0">{{title}}</h2>
+      </div>
+      {% if title != 'Home' %}
+      <div class="col">
+        <ul class="nav nav-pills justify-content-end">
+          <li class="nav-item mr-0 mr-md-0 active" data-target="#myCarousel" data-slide-to="0">
+            <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
+              <span class="d-none d-md-block">Main</span>
+              <span class="d-md-none">M</span>
+            </a>
+          </li>
+          <li class="nav-item" data-target="#myCarousel" data-slide-to="1" >
+            <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
+              <span class="d-none d-md-block">Parking</span>
+              <span class="d-md-none">P</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {% load static %}
+  <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+      {% if title == 'Community' %}
+        <img class="" src="{% static 'images/community.png' %}" style="   max-width: 100%">
+      {% elif title == 'Home'%}
+        <img class="" src="{% static 'images/house02.png' %}" style="max-width: 80%">
+      {% elif title == 'Office'%}
+        <img class="" src="{% static 'images/office0.png' %}" style="max-width: 100%">
+      {% endif %}
+    </div>
+    <div class="carousel-item">
+      <img class="" src="{% static 'images/parking.png' %}" style="max-width: 100%">
+    </div>
+  </div>
+  <!--<div class="card-body">
+          
+      <div class="chart">
+            
+        <canvas id="chart-sales" class="chart-canvas"></canvas>
+      </div>
+  </div>-->
+</div>

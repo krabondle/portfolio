@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <meta charset='utf-8'>
+    {% comment %} {% if ck != 0 %}
+    <meta http-equiv="refresh" content="0;url={% url 'dongle' %}">
+    {% endif %} {% endcomment %}
+    {% if not user.is_authenticated %}
+    <meta http-equiv="refresh" content="0;url={% url 'Navigation' %}">
+    {% endif %}
+    {% if not user.is_authenticated %}
+    <meta http-equiv="refresh" content="0;url={% url 'Navigation' %}">
+    {% endif %}
+    <title>{% block head_title %}{% endblock %}</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="{% static 'images/iot-icon02.png' %}" rel="icon" type="image/png">
+    <link rel="stylesheet" href="{% static 'css/argon-dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nucleo.css' %}">
+</head>
+
+<body>
+    {% include "sidebar-L.html" %}
+
+    {% block content %}{% endblock %}
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <!--<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>-->
+</body>
+
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	
+  <title>
+    {% block head_title %}{% endblock %}
+  </title>
+  <!-- Favicon -->
+  
+  <!-- Fonts -->
+  
+  <!-- Icons -->
+  <!--<link href="assets/js/plugins/nucleo/css/nucleo.css" rel="stylesheet" />
+  <link href="assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />-->
+  <!-- CSS Files -->
+  
+  {% load static %}
+  <link href="{% static 'images/iot-icon02.png' %}" rel="icon" type="image/png">
+	<link rel="stylesheet" href="{% static 'css/argon-dashboard.css' %}">
+	
+</head>
+
+
+
+<body class="bg-color01">
+  <div class="main-content">
+	 <!-- Navbar -->
+	<nav class="navbar navbar-top  navbar-expand-md navbar-dark">
+      <div class="container px-4 ">
+        <a class="navbar-brand  "  href="/">
+          <img src="{% static 'images/iot-icon02.png'%}" style="width: 90px;">
+			<!--<img src="../static/images/iot-icon02.png" style="width :120px;">-->
+        </a>
+		
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-collapse-main">
+          <!-- Collapse header -->
+          <div class="navbar-collapse-header d-md-none">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a href="/">
+                  <img src="{% static 'images/iot-icon02.png'%}" >
+                </a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Navbar items -->
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item">
+              <a class="nav-link nav-link-icon" href="{% url 'account_signup' %}">
+                <i class="ni ni-circle-08"></i>
+                <span class="nav-link-inner--text">Sign up</span>
+              </a>
+            </li>
+			
+            <li class="nav-item">
+              <a class="nav-link nav-link-icon" href="{% url 'account_login' %}">
+                <i class="ni ni-key-25"></i>
+                <span class="nav-link-inner--text">Login</span>
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+<!-- Header -->
+	
+	<div class="header bg-gradient-deep-gray py-7 py-lg-8">
+      <div class="container">
+        <div class="header-body text-center mb-7">
+          <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-6">
+				      {% block title %}{% endblock %}
+              <!--<h1 class="text-white">Welcome!</h1>
+              <p class="text-lead text-light">Sign in to your own project for IOT.</p>-->
+            </div>
+          </div>
+			
+        </div>
+      </div>
+		
+      <div class="separator separator-bottom separator-skew zindex-100">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-color01" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+  </div>	
+
+
+	
+<!-- Page content -->
+	<div class="container mt--9 pb-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-7">
+          <div class="card bg-secondary shadow border-0">
+			  
+			      <div class="card-body px-lg-5 py-lg-5">
+              {% block content %}{% endblock %}
+			      </div>
+
+		      </div>
+		    </div>
+	    </div>
+  </div>
+  {% include "footer.html" %}
+	
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  
+</body>
+	
+	
+</html>

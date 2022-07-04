@@ -1,0 +1,31 @@
+              <canvas id="chart-sales" class="chart-canvas"></canvas>
+              {% for p in result %}
+              {% if forloop.first %}
+              <table>
+                <tr bgcolor='#ff0000'>
+                  <td width=100>ID</td>
+                  <td width=50>Type</td>
+                  <td width=60>Number</td>
+                  <td width=50>Topic</td>
+                  <td width=50>Value</td>
+                  <td width=150>Time</td>
+                  
+                </tr>
+                {% endif %}
+                <tr bgcolor='{% cycle "#0fccff" "ccffc0" %}'>
+                  
+                  <td>{{ p.id }}</td>
+                  <td>{{ p.Type }}</td>
+                  <td>{{ p.Number }}</td>
+                  <td>{{ p.Topic }}</td>
+                  <td>{{ p.Value }}</td>
+                  <td>{{ p.Time }}</td>
+                  
+                  
+                </tr>
+                {% if forloop.last %}
+              </table>
+              {% endif %}
+              {% empty %}
+              <h3>No Data</h3>
+              {% endfor %}
